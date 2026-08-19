@@ -1,0 +1,19 @@
+{
+    "name": "HordeForge.Editor",
+    "rootNamespace": "HordeForge.EditorTools",
+    "references": [
+        "HordeForge.Core",
+        "HordeForge.Unity"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

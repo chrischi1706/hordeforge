@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Kompiliert exakt die Sourcen, die Unity als HordeForge.Core-Assembly baut.
+    Zweck: Die Spiellogik ist ohne laufenden Unity-Editor kompilier- und testbar.
+
+    netstandard2.1 + C# 9 entsprechen dem, was Unity 6 akzeptiert. Wird hier etwas
+    verwendet, das Unity nicht kann, schlaegt schon dieser Build fehl.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyName>HordeForge.Core</AssemblyName>
+    <RootNamespace>HordeForge.Core</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../Assets/HordeForge/Core/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Entspricht com.unity.nuget.newtonsoft-json 3.2.1 im Unity-Projekt. -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Uebersetzt den Unity-Layer gegen nachgebildete Unity-APIs (Tools/UnityApiStubs).
+
+    Damit laesst sich ohne installierten Editor pruefen, ob der Unity-Code in sich
+    stimmig ist und die Core-Assembly korrekt aufruft. Der echte Editor bleibt die
+    letzte Instanz – dieser Build faengt aber alles ab, was sonst erst beim ersten
+    Oeffnen des Projekts auffiele.
+
+    Wird nie ausgeliefert und liegt ausserhalb von Assets/, Unity sieht es also nicht.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyName>HordeForge.UnityLayer.Check</AssemblyName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <NoWarn>$(NoWarn);CS0649;CS0414;CS0169</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../UnityApiStubs/**/*.cs" />
+    <Compile Include="../../Assets/HordeForge/Core/**/*.cs" />
+    <Compile Include="../../Assets/HordeForge/Unity/**/*.cs" />
+    <Compile Include="../../Assets/HordeForge/Editor/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

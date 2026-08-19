@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------
+# Unity
+# ---------------------------------------------------------------
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Never ignore Asset meta data
+!/[Aa]ssets/**/*.meta
+
+# Unity3D generated
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+sysinfo.txt
+*.unitypackage
+*.app
+
+# Crash reports
+crashlytics-build.properties
+
+# ---------------------------------------------------------------
+# IDE / editor
+# ---------------------------------------------------------------
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+
+# The standalone tooling projects are checked in on purpose,
+# they are not the Unity-generated ones.
+!/Tools/**/*.csproj
+!/Tools/**/*.sln
+
+# ---------------------------------------------------------------
+# Standalone .NET tooling (build output + local SDK)
+# ---------------------------------------------------------------
+/.tools/
+**/bin/
+**/nupkgs/
+/Tools/**/obj/
+
+# ---------------------------------------------------------------
+# OS
+# ---------------------------------------------------------------
+.DS_Store
+*~
