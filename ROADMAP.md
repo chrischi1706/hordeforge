@@ -114,25 +114,25 @@ Zwei Regeln, die daraus konkret folgen:
 
 | # | Schritt                                  | Status |
 | - | ---------------------------------------- | ------ |
-| 1 | Projekt-Setup, Toolchain, Roadmap         | offen  |
-| 2 | Core-Fundament, Definitionen, Content     | offen  |
-| 3 | Ressourcen-/Economy-System                | offen  |
-| 4 | Bevölkerung + Echtzeit-Zuweisung          | offen  |
-| 5 | Produktionsgebäude                        | offen  |
-| 6 | Ressourcenketten                          | offen  |
-| 7 | Gebäudeplatzierung                        | offen  |
-| 8 | Militäreinheiten                          | offen  |
-| 9 | Truppensystem                             | offen  |
-|10 | Truppenplatzierung                        | offen  |
-|11 | Kampfsystem                               | offen  |
-|12 | Gegner                                    | offen  |
-|13 | Hordensystem + Budgetgenerator            | offen  |
-|14 | Verteidigungsanlagen                      | offen  |
-|15 | Elitewellen                               | offen  |
-|16 | Inventar und Items                        | offen  |
-|17 | HUD/UI                                    | offen  |
-|18 | Save/Load                                 | offen  |
-|19 | Balancing                                 | offen  |
-|20 | Linux-Build                               | offen  |
+| 1 | Projekt-Setup, Toolchain, Roadmap         | erledigt |
+| 2 | Core-Fundament, Definitionen, Content     | erledigt |
+| 3 | Ressourcen-/Economy-System                | erledigt |
+| 4 | Bevölkerung + Echtzeit-Zuweisung          | erledigt |
+| 5 | Produktionsgebäude                        | erledigt |
+| 6 | Ressourcenketten                          | erledigt |
+| 7 | Gebäudeplatzierung                        | erledigt |
+| 8 | Militäreinheiten                          | erledigt |
+| 9 | Truppensystem                             | erledigt |
+|10 | Truppenplatzierung                        | erledigt |
+|11 | Kampfsystem                               | erledigt |
+|12 | Gegner                                    | erledigt |
+|13 | Hordensystem + Budgetgenerator            | erledigt |
+|14 | Verteidigungsanlagen                      | erledigt |
+|15 | Elitewellen                               | erledigt |
+|16 | Inventar und Items                        | erledigt |
+|17 | HUD/UI                                    | erledigt |
+|18 | Save/Load                                 | erledigt |
+|19 | Balancing                                 | teilweise (Bot ~4–5 Wellen) |
+|20 | Linux-Build                               | vorbereitet (`build-linux.sh`) |
 
 Nach jedem abgeschlossenen System gilt: kompilieren, Tests grün, dann weiter.

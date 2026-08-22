@@ -1,0 +1,918 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabdf0903cbf1ef6189c7cce2ac570fb, type: 3}
+  m_Name: HordeForgeContent
+  m_EditorClassIdentifier: HordeForge.Unity::HordeForge.Unity.Content.GameContentAsset
+  _config:
+    Settings:
+      StartingPopulation: 40
+      MaxPopulation: 160
+      FoodPerCitizenPerMinute: 1
+      GrowthFoodThreshold: 60
+      PopulationGrowthPerMinute: 2
+      FoodWarningThreshold: 20
+      InventoryCapacity: 20
+      MapRadius: 70
+      BuildingSpacing: 1
+      StartingResources:
+      - Resource: 1
+        Amount: 260
+      - Resource: 2
+        Amount: 140
+      - Resource: 20
+        Amount: 45
+      - Resource: 21
+        Amount: 35
+      - Resource: 22
+        Amount: 25
+      - Resource: 24
+        Amount: 15
+      - Resource: 26
+        Amount: 60
+      - Resource: 5
+        Amount: 40
+      - Resource: 80
+        Amount: 120
+      - Resource: 81
+        Amount: 20
+      - Resource: 60
+        Amount: 4
+      - Resource: 61
+        Amount: 6
+      - Resource: 63
+        Amount: 8
+      - Resource: 62
+        Amount: 2
+      - Resource: 64
+        Amount: 2
+    Waves:
+      BaseBudget: 100
+      BudgetGrowth: 1.38
+      BudgetRounding: 10
+      EliteChance: 0.15
+      EliteMinWave: 3
+      EliteBudgetMultiplier: 1.5
+      EliteHealthMultiplier: 1.5
+      EliteDamageMultiplier: 1.25
+      PreparationSeconds: 90
+      FirstWavePreparationSeconds: 210
+      EnemyUnlockBudgetFactor: 4
+      MaxSpawnDirections: 2
+      SpawnIntervalSeconds: 0.35
+      SpawnDistance: 62
+    Map:
+      Zones:
+      - DisplayName: Westwald
+        AllowedBuilding: 10
+        Center:
+          X: -30
+          Y: 20
+        Radius: 13
+      - DisplayName: Ostwald
+        AllowedBuilding: 10
+        Center:
+          X: 32
+          Y: -18
+        Radius: 11
+      - DisplayName: Steinbruchkante
+        AllowedBuilding: 11
+        Center:
+          X: 28
+          Y: 24
+        Radius: 10
+      - DisplayName: Erzader
+        AllowedBuilding: 12
+        Center:
+          X: -32
+          Y: -24
+        Radius: 10
+      - DisplayName: Kornfelder
+        AllowedBuilding: 13
+        Center:
+          X: 0
+          Y: 32
+        Radius: 12
+      - DisplayName: Baumwollfelder
+        AllowedBuilding: 15
+        Center:
+          X: -38
+          Y: 2
+        Radius: 9
+      - DisplayName: Schafweide
+        AllowedBuilding: 16
+        Center:
+          X: 38
+          Y: 2
+        Radius: 9
+      - DisplayName: Fischgruende
+        AllowedBuilding: 14
+        Center:
+          X: 0
+          Y: -34
+        Radius: 12
+      StartingBuildings:
+      - Type: 1
+        Position:
+          X: 0
+          Y: 0
+      - Type: 10
+        Position:
+          X: -28
+          Y: 18
+      - Type: 13
+        Position:
+          X: 0
+          Y: 30
+      - Type: 14
+        Position:
+          X: 0
+          Y: -32
+      - Type: 30
+        Position:
+          X: -10
+          Y: 8
+    Resources:
+    - Type: 1
+      DisplayName: Holz
+      Category: 0
+      FoodValue: 0
+    - Type: 2
+      DisplayName: Stein
+      Category: 0
+      FoodValue: 0
+    - Type: 3
+      DisplayName: Erz
+      Category: 0
+      FoodValue: 0
+    - Type: 4
+      DisplayName: Getreide
+      Category: 0
+      FoodValue: 0
+    - Type: 5
+      DisplayName: Fisch
+      Category: 0
+      FoodValue: 1
+    - Type: 6
+      DisplayName: Baumwolle
+      Category: 0
+      FoodValue: 0
+    - Type: 7
+      DisplayName: Wolle
+      Category: 0
+      FoodValue: 0
+    - Type: 20
+      DisplayName: Bretter
+      Category: 1
+      FoodValue: 0
+    - Type: 21
+      DisplayName: Bearb. Stein
+      Category: 1
+      FoodValue: 0
+    - Type: 22
+      DisplayName: Metall
+      Category: 1
+      FoodValue: 0
+    - Type: 23
+      DisplayName: Mehl
+      Category: 1
+      FoodValue: 0
+    - Type: 24
+      DisplayName: Faden
+      Category: 1
+      FoodValue: 0
+    - Type: 25
+      DisplayName: Stoff
+      Category: 1
+      FoodValue: 0
+    - Type: 26
+      DisplayName: Brot
+      Category: 1
+      FoodValue: 3
+    - Type: 40
+      DisplayName: Werkzeug
+      Category: 2
+      FoodValue: 0
+    - Type: 60
+      DisplayName: Bogen
+      Category: 3
+      FoodValue: 0
+    - Type: 61
+      DisplayName: Speer
+      Category: 3
+      FoodValue: 0
+    - Type: 62
+      DisplayName: Schwert
+      Category: 3
+      FoodValue: 0
+    - Type: 63
+      DisplayName: Schild
+      Category: 3
+      FoodValue: 0
+    - Type: 64
+      DisplayName: Ruestung
+      Category: 3
+      FoodValue: 0
+    - Type: 80
+      DisplayName: Pfeile
+      Category: 4
+      FoodValue: 0
+    - Type: 81
+      DisplayName: Belagerungsmunition
+      Category: 4
+      FoodValue: 0
+    Buildings:
+    - Type: 1
+      DisplayName: Rathaus
+      Category: 0
+      BuildCost: []
+      WorkerSlots: 0
+      MaxHealth: 6000
+      Radius: 4
+      Recipes: []
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 10
+      DisplayName: Holzfaellerhuette
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 20
+      WorkerSlots: 3
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Holzfaellerhuette
+        Inputs: []
+        Outputs:
+        - Resource: 1
+          Amount: 3
+        CycleSeconds: 6
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 11
+      DisplayName: Steinbruch
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 25
+      WorkerSlots: 3
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Steinbruch
+        Inputs: []
+        Outputs:
+        - Resource: 2
+          Amount: 3
+        CycleSeconds: 7
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 12
+      DisplayName: Erzmine
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 30
+      - Resource: 2
+        Amount: 10
+      WorkerSlots: 3
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Erzmine
+        Inputs: []
+        Outputs:
+        - Resource: 3
+          Amount: 3
+        CycleSeconds: 8
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 13
+      DisplayName: Getreidefeld
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 20
+      WorkerSlots: 4
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Getreidefeld
+        Inputs: []
+        Outputs:
+        - Resource: 4
+          Amount: 4
+        CycleSeconds: 6
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 14
+      DisplayName: Fischerhuette
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 25
+      WorkerSlots: 3
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Fischerhuette
+        Inputs: []
+        Outputs:
+        - Resource: 5
+          Amount: 3
+        CycleSeconds: 6
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 15
+      DisplayName: Baumwollfarm
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 20
+      WorkerSlots: 3
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Baumwollfarm
+        Inputs: []
+        Outputs:
+        - Resource: 6
+          Amount: 3
+        CycleSeconds: 8
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 16
+      DisplayName: Schaeferei
+      Category: 1
+      BuildCost:
+      - Resource: 1
+        Amount: 25
+      WorkerSlots: 3
+      MaxHealth: 620
+      Radius: 1.8
+      Recipes:
+      - DisplayName: Schaeferei
+        Inputs: []
+        Outputs:
+        - Resource: 7
+          Amount: 2
+        CycleSeconds: 9
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 30
+      DisplayName: Saegewerk
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 30
+      - Resource: 2
+        Amount: 10
+      WorkerSlots: 3
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Bretter
+        Inputs:
+        - Resource: 1
+          Amount: 2
+        Outputs:
+        - Resource: 20
+          Amount: 1
+        CycleSeconds: 5
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 31
+      DisplayName: Steinmetz
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 30
+      WorkerSlots: 3
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Bearb. Stein
+        Inputs:
+        - Resource: 2
+          Amount: 2
+        Outputs:
+        - Resource: 21
+          Amount: 1
+        CycleSeconds: 6
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 32
+      DisplayName: Schmelzofen
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 40
+      - Resource: 2
+        Amount: 20
+      WorkerSlots: 3
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Metall
+        Inputs:
+        - Resource: 3
+          Amount: 2
+        Outputs:
+        - Resource: 22
+          Amount: 1
+        CycleSeconds: 7
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 33
+      DisplayName: Muehle
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 30
+      WorkerSlots: 2
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Mehl
+        Inputs:
+        - Resource: 4
+          Amount: 2
+        Outputs:
+        - Resource: 23
+          Amount: 1
+        CycleSeconds: 5
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 34
+      DisplayName: Baeckerei
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 30
+      - Resource: 2
+        Amount: 15
+      WorkerSlots: 2
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Brot
+        Inputs:
+        - Resource: 23
+          Amount: 1
+        Outputs:
+        - Resource: 26
+          Amount: 2
+        CycleSeconds: 5
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 35
+      DisplayName: Spinnerei
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 25
+      WorkerSlots: 2
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Faden aus Baumwolle
+        Inputs:
+        - Resource: 6
+          Amount: 2
+        Outputs:
+        - Resource: 24
+          Amount: 1
+        CycleSeconds: 6
+      - DisplayName: Faden aus Wolle
+        Inputs:
+        - Resource: 7
+          Amount: 2
+        Outputs:
+        - Resource: 24
+          Amount: 1
+        CycleSeconds: 6
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 36
+      DisplayName: Weberei
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 30
+      WorkerSlots: 2
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Stoff
+        Inputs:
+        - Resource: 24
+          Amount: 2
+        Outputs:
+        - Resource: 25
+          Amount: 1
+        CycleSeconds: 7
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 37
+      DisplayName: Schmiede
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 40
+      - Resource: 21
+        Amount: 20
+      - Resource: 22
+        Amount: 10
+      WorkerSlots: 3
+      MaxHealth: 820
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Werkzeug
+        Inputs:
+        - Resource: 22
+          Amount: 1
+        - Resource: 1
+          Amount: 1
+        Outputs:
+        - Resource: 40
+          Amount: 1
+        CycleSeconds: 8
+      - DisplayName: Speer
+        Inputs:
+        - Resource: 20
+          Amount: 1
+        - Resource: 22
+          Amount: 1
+        Outputs:
+        - Resource: 61
+          Amount: 1
+        CycleSeconds: 9
+      - DisplayName: Schwert
+        Inputs:
+        - Resource: 20
+          Amount: 2
+        - Resource: 22
+          Amount: 2
+        Outputs:
+        - Resource: 62
+          Amount: 1
+        CycleSeconds: 12
+      - DisplayName: Schild
+        Inputs:
+        - Resource: 20
+          Amount: 1
+        - Resource: 22
+          Amount: 1
+        Outputs:
+        - Resource: 63
+          Amount: 1
+        CycleSeconds: 9
+      - DisplayName: Ruestung
+        Inputs:
+        - Resource: 22
+          Amount: 2
+        - Resource: 25
+          Amount: 1
+        Outputs:
+        - Resource: 64
+          Amount: 1
+        CycleSeconds: 14
+      - DisplayName: Belagerungsmunition
+        Inputs:
+        - Resource: 1
+          Amount: 1
+        - Resource: 2
+          Amount: 2
+        Outputs:
+        - Resource: 81
+          Amount: 4
+        CycleSeconds: 8
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 38
+      DisplayName: Bogner
+      Category: 2
+      BuildCost:
+      - Resource: 1
+        Amount: 35
+      - Resource: 20
+        Amount: 10
+      WorkerSlots: 2
+      MaxHealth: 700
+      Radius: 1.9
+      Recipes:
+      - DisplayName: Bogen
+        Inputs:
+        - Resource: 20
+          Amount: 2
+        - Resource: 24
+          Amount: 1
+        Outputs:
+        - Resource: 60
+          Amount: 1
+        CycleSeconds: 10
+      - DisplayName: Pfeile
+        Inputs:
+        - Resource: 1
+          Amount: 1
+        - Resource: 22
+          Amount: 1
+        - Resource: 24
+          Amount: 1
+        Outputs:
+        - Resource: 80
+          Amount: 10
+        CycleSeconds: 6
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 50
+      DisplayName: Mauer
+      Category: 4
+      BuildCost:
+      - Resource: 1
+        Amount: 10
+      - Resource: 21
+        Amount: 8
+      WorkerSlots: 0
+      MaxHealth: 1400
+      Radius: 1.2
+      Recipes: []
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 51
+      DisplayName: Tor
+      Category: 4
+      BuildCost:
+      - Resource: 1
+        Amount: 15
+      - Resource: 21
+        Amount: 10
+      - Resource: 22
+        Amount: 5
+      WorkerSlots: 0
+      MaxHealth: 1500
+      Radius: 1.4
+      Recipes: []
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    - Type: 52
+      DisplayName: Bogenturm
+      Category: 3
+      BuildCost:
+      - Resource: 20
+        Amount: 15
+      - Resource: 21
+        Amount: 15
+      - Resource: 22
+        Amount: 5
+      WorkerSlots: 2
+      MaxHealth: 950
+      Radius: 1.8
+      Recipes: []
+      AttackDamage: 20
+      AttackRange: 18
+      AttackInterval: 1.1
+      AmmoResource: 80
+      AmmoPerShot: 1
+    - Type: 53
+      DisplayName: Ballista
+      Category: 3
+      BuildCost:
+      - Resource: 20
+        Amount: 20
+      - Resource: 22
+        Amount: 10
+      - Resource: 24
+        Amount: 5
+      - Resource: 21
+        Amount: 10
+      WorkerSlots: 3
+      MaxHealth: 820
+      Radius: 1.9
+      Recipes: []
+      AttackDamage: 60
+      AttackRange: 22
+      AttackInterval: 3
+      AmmoResource: 81
+      AmmoPerShot: 1
+    - Type: 54
+      DisplayName: Katapult
+      Category: 3
+      BuildCost:
+      - Resource: 20
+        Amount: 30
+      - Resource: 22
+        Amount: 15
+      - Resource: 24
+        Amount: 8
+      - Resource: 21
+        Amount: 15
+      WorkerSlots: 5
+      MaxHealth: 760
+      Radius: 2.1
+      Recipes: []
+      AttackDamage: 130
+      AttackRange: 28
+      AttackInterval: 5
+      AmmoResource: 81
+      AmmoPerShot: 2
+    - Type: 70
+      DisplayName: Handelskammer
+      Category: 5
+      BuildCost:
+      - Resource: 1
+        Amount: 40
+      - Resource: 21
+        Amount: 20
+      - Resource: 25
+        Amount: 10
+      WorkerSlots: 3
+      MaxHealth: 700
+      Radius: 2
+      Recipes: []
+      AttackDamage: 0
+      AttackRange: 0
+      AttackInterval: 0
+      AmmoResource: 0
+      AmmoPerShot: 0
+    Units:
+    - Type: 1
+      DisplayName: Bogenschuetze
+      MaxHealth: 75
+      AttackDamage: 13
+      AttackRange: 14
+      AttackInterval: 1.1
+      MoveSpeed: 3
+      LeashRadius: 5
+      AmmoResource: 80
+      AmmoPerShot: 1
+      RecruitCost:
+      - Resource: 60
+        Amount: 1
+      - Resource: 80
+        Amount: 12
+      FoodCost: 5
+    - Type: 2
+      DisplayName: Speertraeger
+      MaxHealth: 150
+      AttackDamage: 18
+      AttackRange: 2.6
+      AttackInterval: 1.2
+      MoveSpeed: 3.2
+      LeashRadius: 12
+      AmmoResource: 0
+      AmmoPerShot: 0
+      RecruitCost:
+      - Resource: 61
+        Amount: 1
+      - Resource: 63
+        Amount: 1
+      FoodCost: 5
+    - Type: 3
+      DisplayName: Schwertkaempfer
+      MaxHealth: 210
+      AttackDamage: 30
+      AttackRange: 2
+      AttackInterval: 1.4
+      MoveSpeed: 3.4
+      LeashRadius: 14
+      AmmoResource: 0
+      AmmoPerShot: 0
+      RecruitCost:
+      - Resource: 62
+        Amount: 1
+      - Resource: 63
+        Amount: 1
+      - Resource: 64
+        Amount: 1
+      FoodCost: 6
+    Enemies:
+    - Type: 1
+      DisplayName: Goblin
+      MaxHealth: 45
+      MoveSpeed: 4.2
+      AttackDamage: 6
+      AttackInterval: 1
+      AttackRange: 1.6
+      BuildingDamageMultiplier: 0.6
+      BudgetCost: 10
+      Radius: 0.5
+    - Type: 2
+      DisplayName: Ork
+      MaxHealth: 130
+      MoveSpeed: 2.8
+      AttackDamage: 14
+      AttackInterval: 1.3
+      AttackRange: 1.8
+      BuildingDamageMultiplier: 1
+      BudgetCost: 25
+      Radius: 0.7
+    - Type: 3
+      DisplayName: Ork-Krieger
+      MaxHealth: 260
+      MoveSpeed: 2.2
+      AttackDamage: 20
+      AttackInterval: 1.6
+      AttackRange: 2
+      BuildingDamageMultiplier: 2.5
+      BudgetCost: 50
+      Radius: 0.8
+    - Type: 4
+      DisplayName: Schattenreiter
+      MaxHealth: 150
+      MoveSpeed: 6.5
+      AttackDamage: 18
+      AttackInterval: 1
+      AttackRange: 1.8
+      BuildingDamageMultiplier: 0.8
+      BudgetCost: 75
+      Radius: 0.7
+    - Type: 5
+      DisplayName: Troll
+      MaxHealth: 900
+      MoveSpeed: 1.5
+      AttackDamage: 45
+      AttackInterval: 2.4
+      AttackRange: 2.4
+      BuildingDamageMultiplier: 3.5
+      BudgetCost: 200
+      Radius: 1.2
+    Items:
+    - Type: 1
+      DisplayName: Altes Schwert
+    - Type: 2
+      DisplayName: Zerbeulter Schild
+    - Type: 3
+      DisplayName: Siegelring
+    - Type: 4
+      DisplayName: Kristall
+    - Type: 5
+      DisplayName: Relikt
+    - Type: 6
+      DisplayName: Altes Dokument

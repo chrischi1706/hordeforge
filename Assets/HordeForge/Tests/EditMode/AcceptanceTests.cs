@@ -89,7 +89,7 @@ namespace HordeForge.Tests
         [Test]
         public void GatheringBuildingsOnlyWorkOnTheMatchingTerrain()
         {
-            Vec2 forest = ZoneCenter(BuildingType.LumberCamp);
+            Vec2 forest = FreeSpotInZone(BuildingType.LumberCamp);
 
             Assert.AreEqual(
                 PlacementResult.Success,
@@ -121,8 +121,8 @@ namespace HordeForge.Tests
         public void RawResourcesBecomeFinishedWeaponsThroughTheFullChain()
         {
             // Holz -> Bretter und Erz -> Metall, daraus in der Schmiede ein Speer.
-            Build(BuildingType.LumberCamp, ZoneCenter(BuildingType.LumberCamp), 3);
-            Build(BuildingType.OreMine, ZoneCenter(BuildingType.OreMine), 3);
+            Build(BuildingType.LumberCamp, FreeSpotInZone(BuildingType.LumberCamp), 3);
+            Build(BuildingType.OreMine, FreeSpotInZone(BuildingType.OreMine), 3);
             Build(BuildingType.Sawmill, new Vec2(12f, 4f), 3);
             Build(BuildingType.Smeltery, new Vec2(18f, 4f), 3);
 
@@ -142,7 +142,7 @@ namespace HordeForge.Tests
         [Test]
         public void CitizensCanBeMovedFromEconomyToDefenceWhileTheGameRuns()
         {
-            Building camp = Build(BuildingType.LumberCamp, ZoneCenter(BuildingType.LumberCamp), 3);
+            Building camp = Build(BuildingType.LumberCamp, FreeSpotInZone(BuildingType.LumberCamp), 3);
             Building tower = Build(BuildingType.ArcherTower, new Vec2(20f, 0f), 0);
 
             TestSim.Run(_sim, 5f);
@@ -242,7 +242,7 @@ namespace HordeForge.Tests
             _sim.Resources.Set(ResourceType.Spear, 20);
             _sim.Resources.Set(ResourceType.Shield, 20);
 
-            Build(BuildingType.LumberCamp, ZoneCenter(BuildingType.LumberCamp), 3);
+            Build(BuildingType.LumberCamp, FreeSpotInZone(BuildingType.LumberCamp), 3);
             Build(BuildingType.ArcherTower, new Vec2(18f, 0f), 2);
 
             Squad squad;
@@ -260,6 +260,48 @@ namespace HordeForge.Tests
                     "Freie plus gebundene Buerger muessen immer die Gesamtzahl ergeben.");
                 Assert.GreaterOrEqual(_sim.Population.Free, 0);
             }
+        }
+
+        [Test]
+        public void ClearingAnEliteWaveAddsAnItemToTheGlobalInventory()
+        {
+            _sim = TestSim.Create(42, config =>
+            {
+                config.Waves.EliteChance = 1f;
+                config.Waves.EliteMinWave = 1;
+                config.Waves.BaseBudget = 10;
+            });
+
+            _sim.Resources.Set(ResourceType.Bread, 500);
+            _sim.Resources.Set(ResourceType.Arrows, 500);
+            _sim.Resources.Set(ResourceType.Spear, 20);
+            _sim.Resources.Set(ResourceType.Shield, 20);
+
+            for (int i = 0; i < MapLayout.AllDirections.Length; i++)
+            {
+                Vec2 post = MapLayout.SpawnPoint(MapLayout.AllDirections[i], 22f);
+                Squad squad;
+                _sim.Squads.TryCreateSquad(post, UnitType.Spearman, 8, out squad);
+
+                Building tower = _sim.Buildings.PlaceWithoutCost(
+                    BuildingType.ArcherTower,
+                    MapLayout.SpawnPoint(MapLayout.AllDirections[i], 16f));
+                _sim.Buildings.SetWorkers(tower, 2);
+            }
+
+            Assert.AreEqual(0, _sim.Inventory.Count);
+
+            _sim.Waves.StartWaveNow();
+            Assert.IsTrue(_sim.Waves.IsEliteWave);
+
+            for (int guard = 0; guard < 8000 && _sim.Waves.Phase == WavePhase.Active; guard++)
+            {
+                _sim.Tick(0.1f);
+            }
+
+            Assert.AreEqual(WavePhase.Preparation, _sim.Waves.Phase);
+            Assert.AreEqual(1, _sim.Inventory.Count);
+            Assert.IsFalse(string.IsNullOrEmpty(_sim.Inventory.Items[0].Id));
         }
     }
 }

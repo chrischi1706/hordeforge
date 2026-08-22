@@ -8,6 +8,7 @@
 #   ./dev.sh build    Core-Assembly kompilieren
 #   ./dev.sh test     NUnit-Tests der Core-Logik ausfuehren
 #   ./dev.sh unity    Unity-Layer gegen nachgebildete Unity-APIs uebersetzen
+#   ./dev.sh play     Headless-Simulation (Balancing), z.B. ./dev.sh play 12 2026
 #   ./dev.sh all      build + unity + test
 #   ./dev.sh clean    Build-Artefakte entfernen
 #
@@ -37,6 +38,7 @@ export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
 CORE_PROJ="$ROOT/Tools/HordeForge.Core.Standalone/HordeForge.Core.Standalone.csproj"
 TEST_PROJ="$ROOT/Tools/HordeForge.Core.Tests/HordeForge.Core.Tests.csproj"
 UNITY_PROJ="$ROOT/Tools/HordeForge.UnityLayer.Check/HordeForge.UnityLayer.Check.csproj"
+PLAY_PROJ="$ROOT/Tools/HordeForge.Playthrough/HordeForge.Playthrough.csproj"
 
 case "${1:-test}" in
   build)
@@ -47,6 +49,11 @@ case "${1:-test}" in
     ;;
   unity)
     dotnet build "$UNITY_PROJ" -v minimal --nologo
+    ;;
+  play)
+    shift || true
+    dotnet build "$PLAY_PROJ" -v quiet --nologo
+    dotnet run --project "$PLAY_PROJ" -v quiet --nologo --no-build -- "$@"
     ;;
   all)
     dotnet build "$CORE_PROJ" -v minimal --nologo
@@ -59,7 +66,7 @@ case "${1:-test}" in
     ;;
   *)
     echo "Unbekannter Befehl: $1" >&2
-    echo "Erlaubt: build | unity | test | all | clean" >&2
+    echo "Erlaubt: build | unity | test | play | all | clean" >&2
     exit 1
     ;;
 esac
